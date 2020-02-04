@@ -1,7 +1,6 @@
 %Nakahara_GTP-solutions.tex
 %LaTeX
-%\documentclass[twoside]{article}
-\documentclass[twoside]{amsart}
+\documentclass{book}
 %This makes the margins little smaller than the default
 %\usepackage{fullpage}
 %fullpage is not installed on andrew, so we'll just use these lines.
@@ -20,6 +19,8 @@
 \usepackage{graphics}
 \usepackage{mathtools}
 \usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{physics}
 
 %This next line (when uncommented) allow you to use encapsulated
 %postscript files for figures in your document
@@ -31,16 +32,12 @@
 
 
 %plain makes sure that we have page numbers
-\pagestyle{plain}
+% \pagestyle{plain}
 
 
 \title{
 Solutions to \emph{Geometry,Topology,Physics} by Mikio Nakahara, 2003.  
 }
-\author{
-  Ernest Yeung
-       }
-\date{zima 2012}
 
 %This defines a new command \questionhead which takes one argument and
 %prints out Question #. with some space.
@@ -71,31 +68,17 @@ Solutions to \emph{Geometry,Topology,Physics} by Mikio Nakahara, 2003.
 
 \maketitle
 
-\href{https://github.com/ernestyalumni/mathphysics/blob/master/LaTeX_and_pdfs/Nakahara_GTP-solutions.tex}{Permanent home} of this \verb|Nakahara GTP-solutions.tex| and \verb|.pdf| files on \verb|github|, \url{https://github.com/ernestyalumni/mathphysics/blob/master/LaTeX_and_pdfs/Nakahara_GTP-solutions.tex}.  \textbf{Go here} for the latest version; if you came here from anywhere else (such as Google Drive), then the version of solutions most likely will be outdated.  
+Source: \url{https://github.com/URenko/mathphysics}.
 
-From the beginning of 2016, I decided to cease all explicit crowdfunding for any of my materials on physics, math.  I failed to raise \emph{any} funds from previous crowdfunding efforts.  I decided that if I was going to live in \emph{abundance}, I must lose a scarcity attitude.  I am committed to keeping all of my material \textbf{open-sourced}.  I give all my stuff \emph{for free}.   
+Based on \url{https://github.com/ernestyalumni/mathphysics}.
 
-In the beginning of 2017, I received a very generous donation from a reader from Norway who found these notes useful, through \emph{PayPal}.  If you find these notes useful, feel free to donate directly and easily through \href{https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ernestsaveschristmas%2bpaypal%40gmail%2ecom&lc=US&item_name=ernestyalumni&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted}{PayPal}, which won't go through a 3rd. party such as indiegogo, kickstarter, patreon.  Otherwise, under the \emph{open-source MIT license}, feel free to copy, edit, paste, make your own versions, share, use as you wish.    
+\chapter{Quantum Physics}
 
-\noindent gmail        : ernestyalumni \\
-linkedin     : ernestyalumni \\
-tumblr       : ernestyalumni \\
-twitter      : ernestyalumni \\
-youtube      : ernestyalumni \\
+\section{Analytical mechanics}
 
+\subsection{Newtonian mechanics}
 
-
-%-----------------------------------%-----------------------------------%-----------------------------------%-----------------------------------%-----------------------------------
-Solutions for \emph{Geometry, Topology, and Physics}.  Mikio Nakahara.  Institute of Physics Publishing.  2003.  ISBN 0 7503 0606 8
-%-----------------------------------%-----------------------------------%-----------------------------------%-----------------------------------%-----------------------------------
-
-\section{Quantum Physics}
-
-\subsection{Analytical mechanics}
-
-\subsubsection{Newtonian mechanics}
-
-\subsubsection{Lagrangian formalism}
+\subsection{Lagrangian formalism}
 
 $\mathcal{L}$ independent of coordinate $q_k$; $q_k$ cyclic.  \\
 
@@ -117,7 +100,7 @@ with $p_k = \frac{ \partial L}{ \partial \dot{q}_k}$.
 \end{equation}
 since $t_i,t_f$ arbitrary, $\delta q_k(t) p^k(t)$ independent of $t$ and hence conserved.
 
-\subsubsection{Hamiltonian formalism}
+\subsection{Hamiltonian formalism}
 
 \exercisehead{1.1}  $A = A(q,p), B(q,p)$ defined on phase space of $H = H(q,p)$
 \[
@@ -150,9 +133,9 @@ since $t_i,t_f$ arbitrary, $\delta q_k(t) p^k(t)$ independent of $t$ and hence c
 \end{equation}
 
 
-\subsection{ Canonical quantization }
-\subsubsection{Hilbert space, bras, and kets}
-\subsubsection{Axioms of canonical quantization}
+\section{ Canonical quantization }
+\subsection{Hilbert space, bras, and kets}
+\subsection{Axioms of canonical quantization}
 
 A3. Poisson bracket in classical mechanics is replaced by commutator. 
 \begin{equation}
@@ -160,75 +143,41 @@ A3. Poisson bracket in classical mechanics is replaced by commutator.
 \end{equation}
 
 
+\subsection{ Heisenberg equation, Heisenberg picture and Schr\"{o}dinger picture}
 
-\subsection*{Problems}
+\subsection{Wavefunction}
 
-\problemhead{1.1} $H = \int d^n x \left[ \frac{1}{2} \left( \frac{ \partial \phi }{ \partial t} \right)^2 + \frac{1}{2} ( \nabla \phi )^2 + V(\phi) \right]$  \\
+\subsection{Harmonic oscillator}
 
-If $\phi$ time independent, $H[\phi] = H_1[\phi] + H_2[\phi]$  
-\[
-\begin{aligned}
-  & H_1[\phi] \equiv \frac{1}{2} \int d^n x ( \nabla x )^2 \\ 
-  & H_2[\phi] \equiv \int d^n x V(\phi)
-\end{aligned}
-\]
-\begin{enumerate}
-\item[(1)] $\phi(x) \to \phi(\lambda x)$
-\[
-\begin{gathered}
-  (\nabla \phi)^2 = \partial_j \phi \partial^j \phi = \lambda^{-2} \partial_i \phi \partial^i \phi = \lambda^{-2} (\nabla \phi)^2 \\ 
-  \frac{ \partial }{ \partial x^i}  = \frac{ \partial y^i}{ \partial x^i } \frac{ \partial}{ \partial y^i } = \lambda \frac{ \partial }{ \partial y^i } \\ 
-  d^n y = \lambda^n d^n x
-\end{gathered}
-\]
-\item[(2)] $
-  \begin{aligned}
-    & H_1[\phi] \to \lambda^{n-2} H_1[\phi] \\
-    & H_2[\phi] \to \lambda^n H_2[\phi] 
-\end{aligned}$
-\[
-\Longrightarrow \partial_{\lambda} H = (n-2) H_1 + n H_2 = 0 \text{ or } (2-n) H_1 - nH_2 = 0 
-\]
-\item[(3)]
-\end{enumerate}
+\section{ Path integral quantization of a Bose particle}
 
+\subsection{Path integral quantization}
 
+\subsection{Imaginary time and partition function}
 
-\subsubsection{ Heisenberg equation, Heisenberg picture and Schr\"{o}dinger picture}
+\subsection{Time-ordered product and generating functional }
 
-\subsubsection{Wavefunction}
+\section{ Harmonic oscillator} 
 
-\subsubsection{Harmonic oscillator}
+\subsection{Transition amplitude}
 
-\subsection{ Path integral quantization of a Bose particle}
+\subsection{Partition function}
 
-\subsubsection{Path integral quantization}
+\section{ Path integral quantization of a Fermi particle }
 
-\subsubsection{Imaginary time and partition function}
-
-\subsubsection{Time-ordered product and generating functional }
-
-\subsection{ Harmonic oscillator} 
-
-\subsubsection{Transition amplitude}
-
-\subsubsection{Partition function}
-
-\subsection{ Path integral quantization of a Fermi particle }
-
-\subsection{ Quantization of a scalar field}
+\section{ Quantization of a scalar field}
 
 \exercisehead{1.9}
 
-\textbf{Hint:} Make the replacement: $\theta \rightarrow \theta - M^{-1} K$.
+\textit{Hint:} Make the replacement: $\theta \rightarrow \theta - M^{-1} K$.
 
-\textbf{Reference:} Srednicki - Quantum Field Theory (2007) 44.
+\textit{Reference:} Srednicki - Quantum Field Theory (2007) 44.
 
-\subsection{ Quantization of a Dirac field}
+\section{ Quantization of a Dirac field}
 
-\subsection{ Gauge theories }
+\section{ Gauge theories }
 
-\subsubsection{ Abelian gauge theories}
+\subsection{ Abelian gauge theories}
 
 \begin{align}
   & \nabla \cdot B = 0   & (1.241a) \\
@@ -314,26 +263,62 @@ Now easily
 Clearly $\mathcal{L}$ is invariant.  
 
 
-\subsubsection{ Non-Abelian gauge theories }
+\subsection{ Non-Abelian gauge theories }
+
+\subsection{ Higgs fields }
+
+\section{ Magnetic monopoles}
+
+\section{ Instantons }
+
+\subsection{ Introduction}
+
+\subsection{ The (anti-)self-dual solution }
+
+
+\section*{Problems}
+
+\problemhead{1.1} 
+$H = \int d^n x \left[ \frac{1}{2} \left( \frac{ \partial \phi }{ \partial t} \right)^2 + \frac{1}{2} ( \nabla \phi )^2 + V(\phi) \right]$  \\
+
+If $\phi$ time independent, $H[\phi] = H_1[\phi] + H_2[\phi]$  
+\[
+\begin{aligned}
+  & H_1[\phi] \equiv \frac{1}{2} \int d^n x ( \nabla x )^2 \\ 
+  & H_2[\phi] \equiv \int d^n x V(\phi)
+\end{aligned}
+\]
+\begin{enumerate}
+\item[(1)] $\phi(x) \to \phi(\lambda x)$
+\[
+\begin{gathered}
+  (\nabla \phi)^2 = \partial_j \phi \partial^j \phi = \lambda^{-2} \partial_i \phi \partial^i \phi = \lambda^{-2} (\nabla \phi)^2 \\ 
+  \frac{ \partial }{ \partial x^i}  = \frac{ \partial y^i}{ \partial x^i } \frac{ \partial}{ \partial y^i } = \lambda \frac{ \partial }{ \partial y^i } \\ 
+  d^n y = \lambda^n d^n x
+\end{gathered}
+\]
+\item[(2)] $
+  \begin{aligned}
+    & H_1[\phi] \to \lambda^{n-2} H_1[\phi] \\
+    & H_2[\phi] \to \lambda^n H_2[\phi] 
+\end{aligned}$
+\[
+\Longrightarrow \partial_{\lambda} H = (n-2) H_1 + n H_2 = 0 \text{ or } (2-n) H_1 - nH_2 = 0 
+\]
+\item[(3)]
+\end{enumerate}
+
+\textit{Reference:} Srednicki - Quantum Field Theory (2007) problem 92.1.
 
 
 
 
-\subsubsection{ Higgs fields }
 
-\subsection{ Magnetic monopoles}
+\chapter{Mathematical Preliminaries}
 
-\subsection{ Instantons }
+\section{Maps}
 
-\subsubsection{ Introduction}
-
-\subsubsection{ The (anti-)self-dual solution }
-
-\section{Mathematical Preliminaries}
-
-\subsection{Maps}
-
-\subsubsection{Definitions}
+\subsection{Definitions}
 
 \exercisehead{2.1}
 
@@ -372,26 +357,25 @@ $g$ surjective.
   & (RR^T)_{ij} = R_{ik} R^T_{kj} = R_{ik} R_{jk} = R^T_{ki} R^T_{kj} = \delta_{ij}
 \end{aligned} 
 \]
-20120306 check above.
+
 
 \[
 \begin{aligned}
   & (R,a)(x) = Rx + a \\ 
-  & (R,a)^{-1}(x) = R^T(x-a) \\ 
-  & (Ra)^{-1} Ra(x) = R^T(Rx + a- a) = x \\ 
-  & (Ra)(Ra)^{-1}(x) = R(R^T(x-a))  + a = x 
+  & (R,a)^{-1}(x) = R^T(x-a) = R^T x - R^T a = (R^T,-R^T a)(x)
 \end{aligned}
 \]
 
+\textit{Reference:} Weinberg - The Quantum Theory of Fields, Volume 1 (2005) 2.4.
 
 
-\subsubsection{Equivalence relation and equivalence class}
+\subsection{Equivalence relation and equivalence class}
 
 \exercisehead{2.5} $m \sim m$ since $\frac{m}{2} = \frac{m}{2}$ \\
 $m \sim n$. Then $n\sim m$ since remainder of $n$ by 2 is the same as the remainder of $m$ divided by 2. \\
 $m \sim n$, $n\sim p$.  $m\sim p$ since remainder of $m$ by 2 is the same as the remainder of $m$ by 2 which is the same as the remainder of $p$ by 2.  
 
-\exercisehead{2.6} $H = \lbrace \tau \in \mathcal{C} | Im{\tau} \geq 0 \rbrace$ \\
+\exercisehead{2.6} $H = \lbrace \tau \in \mathbb{C} | \Im \tau \geq 0 \rbrace$ \\
 $SL(2,\mathbb{Z}) \equiv \lbrace \left( \begin{matrix} a & b \\ c & d \end{matrix} \right) | a,b, c, d \in \mathbb{Z}, \, ad - bc = 1 \rbrace$ \\
 $\tau \sim \tau'$ if $\exists \, A = \left( \begin{matrix} a & b  \\ c & d \end{matrix} \right) \in SL(2,\mathbb{Z})$ s.t. $\tau' =  \frac{ a\tau + b}{ c\tau + d }$ \\
 
@@ -420,7 +404,7 @@ Given $\tau \sim \tau'$, $\tau' \sim \tau''$
 (ae + cf) (bg - dh) - (ag+ch) (be +df) = abeg + adeh + bcfg + cdfh - abeg - adfg - bceh - cdfh = 1 
 \]
 
-Example 2.6. \\
+\smallskip\noindent{\large\bf Example 2.6.} \\
 $g \sim g'$ if $\exists \, h \in H$ s.t. $g' = gh$ \\
 $[g] = \lbrace gh | h \in H \rbrace \equiv gH$ (left) coset. \\
 quotient space $\equiv G/H$ \\
@@ -442,11 +426,11 @@ If $a\simeq b$, $g^{-1}bg = a$ and $g^{-1} \in G$, so $b\simeq a$. \\
 If $a \simeq b$ and $b\simeq c$, then $c = hbh^{-1}$, so $c = hg a g^{-1} h^{-1}$ and $(hg)^{-1} = g^{-1}h^{-1}$.  
 
 
-\subsection{Vector spaces}
+\section{Vector spaces}
 
-\subsubsection{Vectors and vector spaces}
+\subsection{Vectors and vector spaces}
 
-\subsubsection{Linear maps, images and kernels}
+\subsection{Linear maps, images and kernels}
 
 \begin{theorem}[2.1] If linear $f: V \to W$, 
 \[
@@ -497,7 +481,7 @@ cw_1 = cf(x_1) = f(cx_1) \in im{f} \text{ since } cx_1 \in V
 Since $f$ linear, if $f(x) = f(y)$, $f(x) - f(y) = f(x-y) =0$.  Since $ker{f} =0$, $x-y =0$ so $x=y$.  $f$ bijective so $f$ an isomorphism.  
 \end{enumerate}
 
-\subsubsection{Dual vector space}
+\subsection{Dual vector space}
 
 \[
 f(\mathbf{v}) = f_i \alpha^i(v^j \mathbf{e}_j ) = f_i v^j \alpha^i(\mathbf{e}_j) = f_i v^i \quad \quad \, (2.12)
@@ -529,7 +513,7 @@ Given $f_i = A_i^{\, k} e_k$,
 \beta^j A_j^{ \, i} = \beta^j \alpha^i f_j = \alpha^i \Longrightarrow \alpha^i = \beta^j A_j^{\, i }
 \]
 
-\subsubsection{Inner product and adjoint}
+\subsection{Inner product and adjoint}
 
 isomorphism $g:V \to V^*$, $g\in GL(m,K)$ 
 \[
@@ -589,7 +573,7 @@ g(v,\widetilde{f}w) = \overline{v}^i g_{ij} \widetilde{f}_{jk} w^k = \overline{G
 \item[(b)]
 \end{enumerate}
 
-\subsubsection{Tensors} 
+\subsection{Tensors} 
 
 tensor $T$ of type $(p,q)$ maps $p$ dual vectors and $q$ vectors to $\mathbb{R}$
 
@@ -601,9 +585,9 @@ tensor $T$ of type $(p,q)$ maps $p$ dual vectors and $q$ vectors to $\mathbb{R}$
 \exercisehead{2.12} $\begin{aligned} & \quad \\ & f:V \to W \\ & f(v) = w \end{aligned}$, so $f(v) \in W$.  \\
 Then tensor identified with dual vector of $W^*$.  Since $f:V$, Then $(1,1)$.  
 
-\subsection{Topological spaces}
+\section{Topological spaces}
 
-\subsubsection{Definitions}
+\subsection{Definitions}
 
 \exercisehead{2.13}
 
@@ -614,13 +598,13 @@ $\bigcap_{n=1}^{\infty} (a,b + \frac{1}{n} ) = (a,b]$.  Then $\lbrace b \rbrace 
 So then $\forall \, $ subset $Y \subset X$ is open.  Discrete topology.  
 
 
-\subsubsection{Continuous maps}
+\subsection{Continuous maps}
 
 \exercisehead{2.14} If $\begin{aligned} & \quad \\ 
   & f: \mathbb{R} \to \mathbb{R} \\ 
   & f(x) = x^2 \end{aligned}$ then $(-\epsilon, + \epsilon) \mapsto [0, \epsilon^2]$ 
 
-\subsubsection{Neighborhoods and Hausdorff spaces}
+\subsection{Neighborhoods and Hausdorff spaces}
 
 \exercisehead{2.15} Let $X = \lbrace \text{John}, \text{Paul}, \text{Ringo}, \text{George}\rbrace$.   \\
 \[
@@ -638,33 +622,33 @@ Consider John and Ringo. Only neighborhood with open set is $X$ for Ringo.  Then
 
 
 
-\subsubsection{Closed set}
+\subsection{Closed set}
 
-\subsubsection{Compactness}
+\subsection{Compactness}
 
-\subsubsection{Connectedness}
+\subsection{Connectedness}
 
-\subsection{Homeomorphisms and topological invariants}
+\section{Homeomorphisms and topological invariants}
 
-\subsubsection{Homeomorphisms}
+\subsection{Homeomorphisms}
 
-\subsubsection{Topological invariants}
+\subsection{Topological invariants}
 
 \exercisehead{2.18} $f:S^1 \to E$ \\
 $\begin{aligned} & \quad \\ 
   & f(x,y) = (ax,by) \\ 
   & f^{-1}(x,y) = \left( \frac{x}{a}, \frac{y}{b} \right) \end{aligned}$ \quad \, $ff^{-1} = f^{-1}f = 1$ bijective and cont. 
 
-\subsubsection{Homotopy type}
+\subsection{Homotopy type}
 
-\subsubsection{Euler characteristic: an example}
+\subsection{Euler characteristic: an example}
 
 
-\section{Homology Groups} 
+\chapter{Homology Groups} 
 
-\subsection{Abelian groups}
+\section{Abelian groups}
 
-\subsubsection{Elementary group theory}
+\subsection{Elementary group theory}
 
 e.g. $f: \mathbb{Z} \to \mathbb{Z}_2 = \lbrace 0 , 1 \rbrace$ \\
 $\begin{aligned}
@@ -742,7 +726,7 @@ Define.  $\begin{aligned} & \quad \\
 $\varphi$ 1-to-1: if $\varphi([x]) = \varphi([y])$, then $f(x) = f(y)$ or $f(x) - f(y) = f(x-y) = 0$.  $x-y \in \ker{f}$ so $[x] = [y]$ \\
 $\varphi$ onto: if $y \in \text{im}{f}$, $\exists \, x \in G_1$ s.t. $f(x) = y = \varphi([x])$ 
 
-\subsubsection{Finitely generated Abelian groups and free Abelian groups}
+\subsection{Finitely generated Abelian groups and free Abelian groups}
 
 \begin{lemma}[3.2] Let $G$ be free Abelian group of rank $r$, 
 \[
@@ -775,15 +759,15 @@ G \simeq \underbrace{ \mathbb{Z} \oplus \dots \oplus \mathbb{Z} }_{m} / \ker{f} 
 
 
 
-\subsection{Simplexes and simplicial complexes}
+\section{Simplexes and simplicial complexes}
 
-\subsubsection{Simplexes}
+\subsection{Simplexes}
 
 number of $q$-faces in $r$-simplex is $\binom{r+1}{q+1}$ \\
 
 $r+1$ \, $p_0 \dots p_r$ pts., choose $p_{i_0} \dots p_{i_q}$ pts.  
 
-\subsubsection{Simplicial complexes and polyhedra}
+\subsection{Simplicial complexes and polyhedra}
 
 Example 3.5. Fig. 3.5(b) not a triangulation of a cylinder.  \\
 $\begin{aligned} & \quad \\ 
@@ -794,11 +778,11 @@ $\sigma_2 \sigma_2' = \langle p_0 \rangle \bigcup \langle p_2 \rangle$ \quad \, 
 
 
 
-\subsection{Homology groups of simplicial complexes}
+\section{Homology groups of simplicial complexes}
 
-\subsubsection{Oriented simplexes}
+\subsection{Oriented simplexes}
 
-\subsubsection{Chain group, Cycle group and boundary group}
+\subsection{Chain group, Cycle group and boundary group}
 
 \begin{definition}[3.2] $r$-chain group $C_r(K)$ of simplicial complex $K$ is free Abelian group generated by oriented $r$-simplexes of $K$ element of $C_r(K)$ is $r$-chain.\end{definition}
 
@@ -869,7 +853,7 @@ if $r =0$, $\partial_0 c =0$, $Z_0(K) = C_0(K)$
 \]
 \end{proof}
 
-\subsubsection{Homology groups}
+\subsection{Homology groups}
 
 \exercisehead{3.1}
   $K = \lbrace p_0, p_1 \rbrace$. $I_r = I_0 = 2$ \, $0-$simplexes.  $c=  c_1 p_0 + c_2 p_1$ \, $0-$chains.  \\
@@ -1029,7 +1013,7 @@ then $i+j + k + l =0$
 Z_0(K)/ \ker{f} \simeq \text{im}{f} = \mathbb{Z} \Longrightarrow \boxed{ H_0 \simeq \mathbb{Z}}
 \]
 
-\subsubsection{Computation of $H_0(K)$}
+\subsection{Computation of $H_0(K)$}
 
 \begin{theorem}[3.5] Let $K$ be \emph{connected} simplicial complex.  Then
 \begin{equation}
@@ -1037,7 +1021,7 @@ Z_0(K)/ \ker{f} \simeq \text{im}{f} = \mathbb{Z} \Longrightarrow \boxed{ H_0 \si
 \end{equation}
 \end{theorem}
 
-\subsubsection{More homology computations}
+\subsection{More homology computations}
 
 Example 3.10.  Fig. 3.8. triangulation of M\"{o}bius strip. \\
 $B_2(K) =0$ \, $\partial_2 z =0$ each $(p_0 p_2), (p_1 p_4), (p_2 p_3), (p_4p_5), (p_3 p_1), (p_5p_0)$ appear only once.  $Z_2(K)=0$ 
@@ -1102,9 +1086,9 @@ Thus, $H_1(K)$ generated by 2 cycles $a,b$ s.t. $a+a =0$ (remember $a$ is ``glue
 \begin{equation}
   H_1(K) = \lbrace i [a] + j[b] | i,j \in \mathbb{Z} \rbrace \simeq \mathbb{Z}_2 \oplus \mathbb{Z} \quad \quad \, (3.51) 
 \end{equation}
-\subsection{General properties of homology groups}
+\section{General properties of homology groups}
 
-\subsubsection{Connectedness and homology groups}
+\subsection{Connectedness and homology groups}
 
 \begin{theorem}[3.6] Let $K  = \bigcup_{k=1}^N K_i$, $K_i K_j \neq \emptyset$.  $K_i$ connected components.  \\
 Then 
@@ -1118,7 +1102,7 @@ H_r(K) = \bigoplus_{i=1}^N H_r(K_i)
   since $Z_r(K_i) \supset B_r(K_i)$, $H_r(K_i)$ well-defined.  
 \end{proof}
 
-\subsubsection{Structure of homology groups}
+\subsection{Structure of homology groups}
 
 \begin{definition}[3.6] Let $K$ simplicial complex.  
 \begin{equation}
@@ -1171,21 +1155,21 @@ Otherwise,
 
 
 
-\section{Homotopy Groups}
+\chapter{Homotopy Groups}
 
 
 
 
+
+\chapter{Manifolds}
 
 \section{Manifolds}
 
-\subsection{Manifolds}
+\subsection{Heuristic introduction}
 
-\subsubsection{Heuristic introduction}
+\subsection{Definitions}
 
-\subsubsection{Definitions}
-
-\subsubsection{Examples}
+\subsection{Examples}
 
 \exercisehead{5.1} 
 
@@ -1250,11 +1234,11 @@ $\pi_1 \pi_2^{-1}$ bijective and $C^{\infty}$, $\pi_1 \pi_2^{-1}$ diffeomorphism
 $\lbrace (S^n-N, \pi_1), (S^n - S, \pi_2) \rbrace$ \, $C^{\infty}$ atlas or differentiable structure.  
 
 
-\subsection{The calculus on manifolds}
+\section{The calculus on manifolds}
 
 
 
-\subsubsection{Differentiable maps}
+\subsection{Differentiable maps}
 
 \exercisehead{5.2} If $f:M\to N$ smooth, \\
 Consider $\begin{aligned} & \quad \\ 
@@ -1275,7 +1259,7 @@ $\begin{aligned} & \quad \\
 Then $(\psi_b' \psi_{\beta}^{-1}), (\varphi_{\alpha} \varphi'_a)^{-1}$ , \, $C^{\infty}$ (def. of atlas) and $(\psi_{\beta} f \varphi_{\alpha}^{-1})$ \, $C^{\infty}$ (given).  \\
 So $\psi_b' f(\varphi_a')^{-1}$ \, $C^{\infty}$
 
-\subsubsection{Vectors}
+\subsection{Vectors}
 
 curve $c:I \to M$ \\
 \phantom{curve } $f:M \to \mathbb{R}$ 
@@ -1383,7 +1367,7 @@ Consider $p\in U_i U_j$, \, $\begin{aligned} & \quad \\
 
 
 
-\subsubsection{One-forms}
+\subsection{One-forms}
 
 $\begin{aligned}
   & \omega \in T_p^*M \\ 
@@ -1427,7 +1411,7 @@ $\begin{aligned}
 \]
 
 
-\subsubsection{Tensors}
+\subsection{Tensors}
 
 $\tau^q_{r, p }(M)$ set of type $(q,r)$ tensors at $p\in M$.  
 
@@ -1464,7 +1448,7 @@ T(\omega_1 \dots \omega_q, V_1 \dots V_r) = T^{\mu_1 \dots \mu_q }_{\phantom{\mu
 \end{gathered}
 \]
 
-\subsubsection{Tensor fields}
+\subsection{Tensor fields}
 
 vector field - vector assigned smooth $\forall \, p \in M$ \\
 \quad i.e. $V$ vector field if $V[f] \in \mathcal{F}(M)$ \quad \, $\forall \, f \in \mathcal{F}(M)$ \\
@@ -1473,7 +1457,7 @@ tensor field of type $(q,r)$, \, $\tau^q_{r,p}(M)$ \, $\forall \, p \in M$ \\
 $\tau_1^0(M)$ set of dual vector fields $\equiv \Omega^1(M)$ \\
 $\tau_0^0(M) = \mathcal{F}(M)$
 
-\subsubsection{ Induced maps}
+\subsection{ Induced maps}
 
 smooth $f:M \to N$ \\
 
@@ -1720,7 +1704,7 @@ with
 \end{aligned}
 \]
 
-\subsubsection{ Submanifolds}
+\subsection{ Submanifolds}
 
 \begin{definition}[5.3] (Immersion, submanifold, embedding) \\
 Let smooth $f: M \to N $ \\
@@ -1736,7 +1720,7 @@ $f(M)$ submanifold of $N$.
 \end{enumerate}
 \end{definition}
 
-\subsection{ Flow and Lie derivatives }
+\section{ Flow and Lie derivatives }
 
 
 Let vector field $X$ in $M$.  \\
@@ -1820,7 +1804,7 @@ y & = Ae^t - Be^{-t} \end{aligned}
 
 
 
-\subsubsection{ One-parameter group of transformations}
+\subsection{ One-parameter group of transformations}
 
 For fixed $t\in \mathbb{R}$, flow $\sigma(t,x)$ is a diffeomorphism from $M$ to $M$, $\sigma_t : M \to M$ \\
 $\sigma_t$ made into a commutative group by 
@@ -1856,7 +1840,7 @@ Properties
 \item[(iii)] $\sigma(t,\sigma(s,x) ) = \sigma(t, \exp{(sX)} x) = \exp{ (tX)} \exp{(sX) }x = \exp{ [ (t+s) X ] }x = \sigma(t+s,x)$
 \end{enumerate}
 
-\subsubsection{ Lie derivatives } 
+\subsection{ Lie derivatives } 
 
 Let $\sigma(t,x)$, $\tau(t,x)$ be 2 flows generated by vector fields $X,Y$ 
 \[
@@ -2012,7 +1996,7 @@ All the 18 terms cancel.
 
 
 
-\subsection{ Differential forms }
+\section{ Differential forms }
 
 symmetry operation on tensor \quad 
 
@@ -2045,7 +2029,7 @@ anti-symmetrizer $\mathcal{A}$
 
 
 
-\subsubsection{ Definitions}
+\subsection{ Definitions}
 
 \begin{definition}[5.4] diff. form or $r$-form, totally antisymmetric tensor of type $(0,r)$ \\
 define wedge product $\wedge$ of $r$ \, 1-forms by the totally antisymm. tensor product
@@ -2057,7 +2041,7 @@ dx^{\mu_1} \wedge dx^{\mu_2} \wedge \dots \wedge dx^{\mu_r} = \sum_{P\in S_r} \t
 
 
 
-% \subsubsection{ Definitions }
+% \subsection{ Definitions }
 
 %\begin{definition}[5.4] differential form of order $r$ or $r$-form is a totally antisymmetric tensor of type $(0,r)$
 %\end{definition}
@@ -2165,7 +2149,7 @@ with this product, define
 \xi \wedge \xi = (v_1 \wedge \dots \wedge v_q) \wedge (v_1 \wedge \dots \wedge v_q) = (-1)^q v_1 \wedge ( v_1 \wedge \dots \wedge v_q) \wedge ( v_2 \wedge \dots \wedge v_q) = (-1)^{q^2} \xi \wedge \xi = -\xi \wedge \xi \text{ if $q$ odd }
 \]
 
-\subsubsection{ Exterior derivatives }
+\subsection{ Exterior derivatives }
 
 \begin{definition}[5.5] exterior derivatives 
 \[
@@ -2294,7 +2278,7 @@ for $r$-form $\omega \in \Omega^r(M)$
 \end{gathered}
 \]
 
-\subsubsection{ Interior product and Lie derivative of forms }
+\subsection{ Interior product and Lie derivative of forms }
 
 interior product $i_X : \Omega^r(M) \to \Omega^{r-1}(M)$ where $X \in \chi(M)$ \\
 
@@ -2444,9 +2428,9 @@ i_X \omega = -dH
 \]
 
 
-\subsection{ Integration of differential forms }
+\section{ Integration of differential forms }
 
-\subsubsection{ Orientation }
+\subsection{ Orientation }
 
 integration of differential form over manifold $M$ defined only when $M$ is ``orientable''
 
@@ -2500,7 +2484,7 @@ Let $p\in U_i \cap U_j \neq \emptyset$, $\begin{aligned} & \quad \\
 
 
 
-\subsubsection{ Integration of forms }
+\subsection{ Integration of forms }
 
 integration of function $f:M \to \mathbb{R}$ over oriented $M$ \\
 take vol. element $\omega$ \\
@@ -2549,9 +2533,9 @@ $f= \cos^2{\theta}$
 \end{aligned}
 \]
 
-\subsection{ Lie groups and Lie algebras }
+\section{ Lie groups and Lie algebras }
 
-\subsubsection{ Lie groups } 
+\subsection{ Lie groups } 
 
 Take $x,y,z \in \mathbb{R} -0$ s.t. $xy=z$ \quad \quad $xy=z$ \quad \, $\frac{ \partial z}{ \partial x } = y \neq 0$
 
@@ -2628,7 +2612,7 @@ Let $gh, g'h'$ representative of $[g], [g']$, resp.
 
 
 
-\subsubsection{ Lie algebras }
+\subsection{ Lie algebras }
 
 left-translation  \\
 $L_g:G \to G$ \\
@@ -2874,9 +2858,9 @@ $X = \frac{ \partial }{ \partial \theta}$ \quad unique left vector field on $G =
 
 
 
-\subsubsection{The one-parameter subgroup }
+\subsection{The one-parameter subgroup }
 
-\subsubsection{Frames and structure equation }
+\subsection{Frames and structure equation }
 
 $\lbrace V_1 \dots V_n \rbrace$ basis of $T_1G = \mathfrak{g}$
 
@@ -2987,25 +2971,20 @@ is satisfied, \textbf{Maurer-Cartan's structure equation}.
 \hrulefill
 
 
-\subsection{ The action of Lie groups on manifolds }
+\section{ The action of Lie groups on manifolds }
 
 
 
 
-\subsubsection{ Definitions} 
+\subsection{ Definitions} 
 
 
-\subsubsection{ Orbits and isotropy groups }
+\subsection{ Orbits and isotropy groups }
 
 
-\subsubsection{ Induced vector fields }
+\subsection{ Induced vector fields }
 
-\subsubsection{ The adjoint representation }
-
-
-
-
-
+\subsection{ The adjoint representation }
 
 
 
@@ -3015,7 +2994,12 @@ is satisfied, \textbf{Maurer-Cartan's structure equation}.
 
 
 
-\section{de Rham Cohomology Groups}
+
+
+
+
+
+\chapter{de Rham Cohomology Groups}
 
 $r$-form $\omega$ in $\mathbb{R}^r$
 
@@ -3054,7 +3038,7 @@ general $r$-chain $c = \sum_i a_i s_{r,i}  \in C_r(M)$
   \int_c \omega = \sum_i a_i \int_{s_{r,i} } \omega \quad \quad \quad \, (6.7)
 \end{equation}
 
-\subsection{ Stokes' theorem }
+\section{ Stokes' theorem }
 
 \begin{theorem}[Stokes' thm.]
 $\begin{aligned}
@@ -3089,22 +3073,22 @@ Also we have
 
 
 
-\subsubsection{ Preliminary consideration }
+\subsection{ Preliminary consideration }
 
 
-\subsubsection{ Stokes' theorem }
+\subsection{ Stokes' theorem }
 
-\subsection{ de Rham cohomology groups }
-
-
+\section{ de Rham cohomology groups }
 
 
 
-\section{Riemannian Geometry}
 
-\subsection{ Riemannian manifolds and pseudo-Riemannian manifolds }
 
-\subsubsection{ Metric tensor }
+\chapter{Riemannian Geometry}
+
+\section{ Riemannian manifolds and pseudo-Riemannian manifolds }
+
+\subsection{ Metric tensor }
 
 \begin{definition}[7.1]
 \begin{enumerate}
@@ -3215,7 +3199,7 @@ Indeed the light cone metric is $\left( \begin{matrix} & 1  & & \\ 1 & & & \\ & 
 \end{aligned}
 \]
 
-\subsubsection{ Induced metric }
+\subsection{ Induced metric }
 
 Let $M$ be $m$-dim. submanifold of $n$-dim. Riemannian manifold $N$ with metric $g_N$.  \\
 If $f: M \to N$ embedding which induces the submanifold structure of $M$.  (Sec. 5.2).  \\
@@ -3285,11 +3269,11 @@ g_{\mu \nu} dx^{\mu} \otimes dx^{\nu} = \delta_{\alpha \beta} \frac{ \partial f^
 
 
 
-\subsection{ Parallel transport, connection and covariant derivative }
+\section{ Parallel transport, connection and covariant derivative }
 
-\subsubsection{ Heuristic introduction }
+\subsection{ Heuristic introduction }
 
-\subsubsection{ Affine connections }
+\subsection{ Affine connections }
 
 \[
 \nabla_X (fY) = X[f]Y + f\nabla_X Y \quad \quad \quad (7.13d)
@@ -3306,7 +3290,7 @@ g_{\mu \nu} dx^{\mu} \otimes dx^{\nu} = \delta_{\alpha \beta} \frac{ \partial f^
 \nabla_{\mu} ( W^{\lambda} \partial_{\lambda} ) = ( \partial_{\mu} W^{\lambda} ) \partial_{\lambda} + W^{\lambda} ( \nabla_{\mu} \partial_{\lambda} ) = \partial_{\mu} W^{\lambda} \partial_{\lambda} + W^{\lambda} \Gamma^a_{\, \, \mu \lambda} \partial_a = (\partial_{\mu} W^{\lambda} + W^b \Gamma^{\lambda}_{ \, \, \mu b} ) \partial_{\lambda}
 \]
 
-\subsubsection{ Parallel transport and geodesics }
+\subsection{ Parallel transport and geodesics }
 
 \[
 \nabla_V X = 0 \quad \quad \quad (7.18a)
@@ -3369,7 +3353,7 @@ So
 \end{gathered}
 \]
 
-\subsubsection{ The covariant derivative of tensor fields }
+\subsection{ The covariant derivative of tensor fields }
 
 Define 
 \[
@@ -3467,7 +3451,7 @@ subtract the 2 facts above.
 
 
 
-\subsubsection{ The transformation properties of connection coefficients }
+\subsection{ The transformation properties of connection coefficients }
 
 another chart $(U, \psi)$, or $UV \neq \emptyset$.  $y = \psi(p)$
 
@@ -3502,56 +3486,56 @@ $\partial_a = \frac{ \partial x^{\nu} }{ \partial y^{\mu} } \partial_{\nu}$
 
 
 
-\subsubsection{ The metric connection }
+\subsection{ The metric connection }
 
-\subsection{ Curvature and torsion }
+\section{ Curvature and torsion }
 
-\subsubsection{ Definitions }
+\subsection{ Definitions }
 
-\subsubsection{ Geometrical meaning of the Riemann tensor and the torsion tensor }
+\subsection{ Geometrical meaning of the Riemann tensor and the torsion tensor }
 
-\subsubsection{ The Ricci tensor and the scalar curvature }
+\subsection{ The Ricci tensor and the scalar curvature }
 
-\subsection{ Levi-Civita connections }
+\section{ Levi-Civita connections }
 
-\subsubsection{ The fundamental theorem }
+\subsection{ The fundamental theorem }
 
-\subsubsection{ The Levi-Civita connection in the classical geometry of surfaces }
+\subsection{ The Levi-Civita connection in the classical geometry of surfaces }
 
-\subsubsection{ Geodesics }
+\subsection{ Geodesics }
 
-\subsubsection{ The normal coordinate system }
+\subsection{ The normal coordinate system }
 
-\subsubsection{ Riemann curvature tensor with Levi-Civita connection}
+\subsection{ Riemann curvature tensor with Levi-Civita connection}
 
-\subsection{ Holonomy }
+\section{ Holonomy }
 
-\subsection{ Isometries and conformal transformations }
+\section{ Isometries and conformal transformations }
 
-\subsubsection{ Isometries }
+\subsection{ Isometries }
 
-\subsubsection{ Conformal transformations }
+\subsection{ Conformal transformations }
 
-\subsection{ Killing vector fields and conformal Killing vector fields }
+\section{ Killing vector fields and conformal Killing vector fields }
 
-\subsubsection{ Killing vector fields }
+\subsection{ Killing vector fields }
 
-\subsubsection{ Conformal Killing vector fields }
+\subsection{ Conformal Killing vector fields }
 
-\subsection{ Non-coordinate bases }
+\section{ Non-coordinate bases }
 
-\subsection{ Differential forms and Hodge theory }
-
-
+\section{ Differential forms and Hodge theory }
 
 
-\section{Complex Manifolds}
 
-\subsection{Complex manifolds }
 
-\subsubsection{}
+\chapter{Complex Manifolds}
 
-\subsubsection{Examples}
+\section{Complex manifolds }
+
+\subsection{}
+
+\subsection{Examples}
 
 \emph{Example 8.3}
 Consider 
@@ -3665,13 +3649,13 @@ I will try to write the ``embedding'' (not proved yet) into $\mathbb{C}^3$:
 
 
 
-\subsection{ Calculus on complex manifolds }
+\section{ Calculus on complex manifolds }
 
 
 
-\section{Fibre bundles}
+\chapter{Fibre bundles}
 
-\subsection{ Tangent bundles }
+\section{ Tangent bundles }
 
 $\pi^{-1}(p) = T_p M$, fibre at $p$
 
@@ -3688,10 +3672,10 @@ local section $s_i : U_i \to TU_i$ on chart $U_i$.
 
 
 
-\subsection{ Fibre bundles }
+\section{ Fibre bundles }
 
 
-\subsubsection{ Definitions}
+\subsection{ Definitions}
 
 
 \begin{definition}[9.1] (diff.) fibre bundle $(E, \pi , M, F , G)$ 
@@ -3755,58 +3739,58 @@ require $g_i(p)$ homeomorphism s.t. $g_i(p) \in G$.
 
 
 
-\subsubsection{ Reconstruction of fibre bundles }
+\subsection{ Reconstruction of fibre bundles }
 
 
-\subsubsection{ Bundle maps }
+\subsection{ Bundle maps }
 
 
-\subsubsection{ Equivalent bundles }
+\subsection{ Equivalent bundles }
 
 
-\subsubsection{ Pullback bundles }
-
-
-
-\subsubsection{ Homotopy axiom }
+\subsection{ Pullback bundles }
 
 
 
-
-
-\subsection{ Vector bundles }
-
-
-\subsubsection{ Definitions and examples }
-
-
-
-\subsubsection{ Frames }
-
-
-\subsubsection{ Cotangent bundles and dual bundles }
-
-
-
-\subsubsection{ Sections of vector bundles }
-
-
-
-\subsubsection{ The product bundle and Whitney sum bundle }
-
-
-
-\subsubsection{ Tensor product bundles }
+\subsection{ Homotopy axiom }
 
 
 
 
-\subsection{ Principal bundles }
+
+\section{ Vector bundles }
+
+
+\subsection{ Definitions and examples }
+
+
+
+\subsection{ Frames }
+
+
+\subsection{ Cotangent bundles and dual bundles }
+
+
+
+\subsection{ Sections of vector bundles }
+
+
+
+\subsection{ The product bundle and Whitney sum bundle }
+
+
+
+\subsection{ Tensor product bundles }
 
 
 
 
-\subsubsection{ Definitions }
+\section{ Principal bundles }
+
+
+
+
+\subsection{ Definitions }
 
 $\Phi_i: U_i \times G \to \pi^{-1}(U_i)$ local trivialization
 
@@ -3969,7 +3953,7 @@ where $g_N, g_S \in SU(2)$
 
 
 
-\subsubsection{ Associated bundles }
+\subsection{ Associated bundles }
 
 principal fiber bundle $P(M,G)$ \\
 Let $G$ act on manifold $F$ on left  \\
@@ -4023,25 +4007,25 @@ transition function of $E$ given by $\rho(t_{ij}(p))$ where $t_{ij}(p)$ is that 
 
 
 
-\subsubsection{ Triviality of bundles }
+\subsection{ Triviality of bundles }
 
 
-\subsection*{ Problems }
-
-
-
-
-\section{Connections on Fibre Bundles}
-
-\subsection{Connections on principal bundles }
+\section*{ Problems }
 
 
 
-\subsubsection{}
 
-\subsubsection{}
+\chapter{Connections on Fibre Bundles}
 
-\subsubsection{ The local connection form and gauge potential }
+\section{Connections on principal bundles }
+
+
+
+\subsection{}
+
+\subsection{}
+
+\subsection{ The local connection form and gauge potential }
 
 Let $\lbrace U_i \rbrace$ open covering of $M$ \\
 \phantom{ Let } $\sigma_i$ local section defined on each $U_i$   \\ 
@@ -4094,7 +4078,7 @@ for $X \in T_pM$,
 
 
 
-\subsubsection{ Horizontal lift and parallel transport }
+\subsection{ Horizontal lift and parallel transport }
 
 \begin{theorem}[10.2] Let $\gamma:[0,1] \to M$, $u_0 \in \pi^{-1}(\gamma(0))$ \\
 Then $\exists \, ! \, $ horizontal lift $\widetilde{\gamma}(t)$ in $P$ s.t. $\widetilde{\gamma}{(0)} = u_0$ 
@@ -4106,9 +4090,9 @@ Then $\exists \, ! \, $ horizontal lift $\widetilde{\gamma}(t)$ in $P$ s.t. $\wi
   g_i(\gamma(t)) = g_i(t) = \mathcal{P}\exp{ \left( -\int_0^t A_{i \mu} \frac{dx^{\mu} }{dt} dt \right) } = \mathcal{P}\exp{ \left( - \int_{\gamma(0)}^{\gamma(t)} A_{i\mu}(\gamma(t))dx^{\mu} \right) } \quad \quad \quad \, (10.14)
 \end{equation}
 
-\subsection{Holonomy}
+\section{Holonomy}
 
-\subsubsection{Definitions}
+\subsection{Definitions}
 
 loop $\gamma \subset M$ defines \emph{transformation} $\tau_{\gamma}: \pi^{-1}(p) \to \pi^{-1}(p)$ on fiber \\
 following from (10.18), EY : ??? , transformation compatible with right action
@@ -4154,7 +4138,7 @@ g_i(\gamma(1)) = g_i(1) = \mathcal{P}\exp{ \left( -\int_0^1 A_{i \mu} \frac{dx^{
 \hrulefill
 
 
-\section{Characteristic Classes}
+\chapter{Characteristic Classes}
 
 % e.g. Sec. 10.5, $SU(2)$ bundle over $S^4$ classified by homotopy group $\pi_3(SU(2)) \cong \mathbb{Z}$ \\
 % also, $\pi_3(SU(2))$ evaluated by integrating $\text{tr}{ \mathcal{F}^2} \in H^4(S^4)$ over $S^4$ (Thm. 10.7)
@@ -4164,13 +4148,13 @@ number $n \in \mathbb{Z}$ tells us how transition functions twist local pieces o
 cf. Thm. 10.7, $\pi_3(SU(2))$ evaluated by integrating $\text{tr}{ F^2} \in H^4(S^4)$ over $S^4$
 
 
-\subsection{Invariant polynomials and the Chern-Weil homomorphism }
+\section{Invariant polynomials and the Chern-Weil homomorphism }
 
 
 
 
 
-\subsubsection{Invariant polynomials}
+\subsection{Invariant polynomials}
 
 $M(k,\mathbb{C})$ - set of complex $k\times k$ matrices  \\
 
@@ -4346,7 +4330,7 @@ The characteristic class defined by an invariant polynomial $P$ is denoted by $\
 
 \emph{Remark}: Since a principal bundle and its associated bundles share the same gauge potentials and field strengths, the Chern-Weil theorem applies equally to both bundles.  Accordingly, $E$ can be either a principal bundle or a vector bundle.
 
-\subsection{Chern classes}
+\section{Chern classes}
 
 \url{http://www.johno.dk/mathematics/fiberbundlestryk.pdf}
 
@@ -4361,16 +4345,16 @@ if $c(E) \in H^l_{dR}(M)$ then $c$ has degree $l$
 
 
 
-\subsection{}
+\section{}
 
 
 
-\subsection{}
+\section{}
 
-\subsection{Chern-Simons form}
+\section{Chern-Simons form}
 
 
-\subsubsection{ Definition }
+\subsection{ Definition }
 
 Let $P_j(F)$ be an arbitrary $2j$-form characteristic class. \\
 \phantom{Let } $P_j(F)$ closed, so by Poincar\'{e}'s lemma, it's locally exact. \\
@@ -4417,7 +4401,7 @@ Thus $Q_{m-1}$ is a characteristic class in its own right and describes the topo
 
 
 
-\subsubsection{ The Chern-Simons form of the Chern character}
+\subsection{ The Chern-Simons form of the Chern character}
 
 Chern character $\text{ch}_j{(F)}$ \\
 \quad connection $A_t$ which interpolates between $0$ and $A$, 
@@ -4454,17 +4438,17 @@ the corresponding curvature is
 
 
 
-\section{Index Theorems}
+\chapter{Index Theorems}
 
 
 
 
-\section{Anomalies in Gauge Field Theories}
+\chapter{Anomalies in Gauge Field Theories}
 
 
 
 
-\section{Bosonic String Theory}
+\chapter{Bosonic String Theory}
 
 
 
